@@ -2,8 +2,8 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         xiamiBoard.setIndexColor(0, 0x00ffff)
         xiamiBoard.setIndexColor(1, 0x00ffff)
-        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 45)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 45)
+        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -13,8 +13,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             `)
     } else if (receivedNumber == 2) {
         xiamiBoard.setIndexColor(1, 0xffff00)
-        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 45)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 45)
+        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
         basic.pause(100)
         xiamiBoard.motorStop(MOTOR.ALL)
         basic.showLeds(`
@@ -29,8 +29,8 @@ radio.onReceivedNumber(function (receivedNumber) {
         xiamiBoard.setIndexColor(0, 0xff8000)
         xiamiBoard.setIndexColor(1, 0xff8000)
         basic.pause(100)
-        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 45)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 45)
+        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
         basic.showLeds(`
             . . # . .
             . . # . .
@@ -42,8 +42,8 @@ radio.onReceivedNumber(function (receivedNumber) {
         xiamiBoard.setIndexColor(1, 0x000000)
     } else if (receivedNumber == 4) {
         xiamiBoard.setIndexColor(0, 0xffff00)
-        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 45)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 45)
+        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
         basic.pause(100)
         xiamiBoard.motorStop(MOTOR.ALL)
         basic.showLeds(`
