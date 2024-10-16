@@ -3,7 +3,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         xiamiBoard.setIndexColor(0, 0x00ffff)
         xiamiBoard.setIndexColor(1, 0x00ffff)
         xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -14,9 +14,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (receivedNumber == 2) {
         xiamiBoard.setIndexColor(1, 0xffff00)
         xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
-        basic.pause(100)
-        xiamiBoard.motorStop(MOTOR.ALL)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
         basic.showLeds(`
             . . # . .
             . . . # .
@@ -30,7 +28,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         xiamiBoard.setIndexColor(1, 0xff8000)
         basic.pause(100)
         xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 128)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
         basic.showLeds(`
             . . # . .
             . . # . .
@@ -43,9 +41,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (receivedNumber == 4) {
         xiamiBoard.setIndexColor(0, 0xffff00)
         xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 128)
-        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
-        basic.pause(100)
-        xiamiBoard.motorStop(MOTOR.ALL)
+        xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
         basic.showLeds(`
             . . # . .
             . # . . .
@@ -67,6 +63,19 @@ radio.onReceivedNumber(function (receivedNumber) {
         basic.showIcon(IconNames.Heart)
     }
 })
+function blinking () {
+    for (let index = 0; index < 4; index++) {
+        xiamiBoard.setIndexColor(0, 0xffff00)
+        xiamiBoard.setIndexColor(1, 0xffff00)
+        basic.pause(100)
+        xiamiBoard.setIndexColor(0, 0xff00ff)
+        xiamiBoard.setIndexColor(1, 0xff00ff)
+        basic.pause(100)
+        xiamiBoard.setIndexColor(0, 0x00ff00)
+        xiamiBoard.setIndexColor(1, 0x00ff00)
+        basic.pause(100)
+    }
+}
 radio.setGroup(12)
 let receivedNumber = 0
 basic.showIcon(IconNames.Rollerskate)
@@ -74,6 +83,7 @@ xiamiBoard.initXiaMiBoard()
 basic.pause(1000)
 xiamiBoard.motorStop(MOTOR.ALL)
 xiamiBoard.setBrightness(51)
+blinking()
 basic.forever(function () {
 	
 })
