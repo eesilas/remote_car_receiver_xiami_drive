@@ -1,6 +1,6 @@
 function L () {
-    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 72)
-    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
+    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 40)
+    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 65)
     basic.pause(500)
     xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 0)
     xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 0)
@@ -66,8 +66,8 @@ radio.onReceivedNumber(function (receivedNumber) {
 function F () {
     xiamiBoard.setIndexColor(0, 0x00ffff)
     xiamiBoard.setIndexColor(1, 0x00ffff)
-    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
-    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 128)
+    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 65)
+    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CW, 65)
     basic.showLeds(`
         . . # . .
         . # # # .
@@ -127,8 +127,8 @@ function waiting () {
         `)
 }
 function B () {
-    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 128)
-    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 128)
+    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 65)
+    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 65)
     basic.showLeds(`
         . . # . .
         . . # . .
@@ -166,8 +166,8 @@ function dance () {
     music.stopAllSounds()
 }
 function R () {
-    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
-    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 72)
+    xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 65)
+    xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 40)
     basic.pause(500)
     xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 0)
     xiamiBoard.motorRun(MOTOR.M2, DIRECTION.CCW, 0)
