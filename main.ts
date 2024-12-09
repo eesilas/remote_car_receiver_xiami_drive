@@ -24,7 +24,10 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (receivedNumber == 4) {
         L()
     } else if (receivedNumber == 5) {
+        xiamiBoard.motorStop(MOTOR.M1)
+        xiamiBoard.motorStop(MOTOR.M2)
         xiamiBoard.motorStop(MOTOR.ALL)
+        basic.pause(2000)
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -33,12 +36,14 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         blinking()
-        xiamiBoard.OLEDshowUserText("Testing...", 1, 0)
+        xiamiBoard.OLEDshowUserText("Stop...", 1, 0)
     } else if (receivedNumber == 6) {
         RPS()
     } else if (receivedNumber == 7) {
         dance()
     } else if (receivedNumber == 8) {
+        xiamiBoard.motorStop(MOTOR.M1)
+        xiamiBoard.motorStop(MOTOR.M2)
         basic.showLeds(`
             # . . . #
             . # . # .
@@ -46,10 +51,10 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . # . .
             . . . . .
             `)
-        pins.servoWritePin(AnalogPin.P8, 180)
-        basic.pause(2000)
+        basic.pause(5000)
     } else if (receivedNumber == 9) {
-        pins.servoWritePin(AnalogPin.P8, 90)
+        xiamiBoard.motorStop(MOTOR.M1)
+        xiamiBoard.motorStop(MOTOR.M2)
         basic.showLeds(`
             . # # . .
             . # # . .
@@ -57,7 +62,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . # . .
             . . . . .
             `)
-        basic.pause(2000)
+        basic.pause(5000)
     } else {
         basic.showIcon(IconNames.Happy)
         blinking()
